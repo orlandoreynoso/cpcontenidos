@@ -3,8 +3,6 @@
 
 /*=========== Custom Post Type reflexiones =================================*/
 
-add_action( 'init', 'crear_post_type_reflexiones', 0 );
-
 function crear_post_type_reflexiones() {
 
 // Etiquetas para el Post Type
@@ -48,7 +46,10 @@ function crear_post_type_reflexiones() {
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
 		'capability_type'     => 'post',
-		'rewrite'           => array('slug' => 'reflexiones'), // Permalinks format
+//		'rewrite'           => array('slug' => 'reflexiones'), // Permalinks format
+		"rewrite" => array( "slug" => "reflexiones", "with_front" => true ),
+		"taxonomies" => array( "category", "post_tag" ),
+		'query_var' => true,
 		//'rewrite'           => array('slug' => 'reflexiones/%proyectox%'), // Permalinks format
 	);
 
@@ -57,6 +58,7 @@ function crear_post_type_reflexiones() {
 
 }
 
+add_action( 'init', 'crear_post_type_reflexiones', 0 );
 
 /* == Agreagando una taxonomia ==*/
 

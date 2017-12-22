@@ -40,6 +40,9 @@ if(file_exists(dirname(__FILE__).'/presentaciones/cpt-presentaciones.php')){
 	require_once dirname( __FILE__ ) . '/presentaciones/cpt-presentaciones.php';
 }
 
+if(file_exists(dirname(__FILE__).'/books/cpt-books.php')){
+	require_once dirname( __FILE__ ) . '/books/cpt-books.php';
+}
 
 
 ?>
