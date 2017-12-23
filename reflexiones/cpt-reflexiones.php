@@ -45,10 +45,10 @@ function crear_post_type_reflexiones() {
 		'has_archive'         => true,
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
-		'capability_type'     => 'post',
+		'capability_type'     => 'page',
 //		'rewrite'           => array('slug' => 'reflexiones'), // Permalinks format
 		"rewrite" => array( "slug" => "reflexiones", "with_front" => true ),
-		"taxonomies" => array( "category", "post_tag" ),
+		//"taxonomies" => array( "category", "post_tag" ),
 		'query_var' => true,
 		//'rewrite'           => array('slug' => 'reflexiones/%proyectox%'), // Permalinks format
 	);
@@ -61,6 +61,7 @@ function crear_post_type_reflexiones() {
 add_action( 'init', 'crear_post_type_reflexiones', 0 );
 
 /* == Agreagando una taxonomia ==*/
+/*
 
 function taxonomia_reflexion(){
 $labels = array(
@@ -94,6 +95,8 @@ register_taxonomy( 'tipo-reflexion', array( 'reflexiones' ), $args );
 }
 
 add_action( 'init', 'taxonomia_reflexion' );
+
+*/
 
 /*==================== metaboxes reflexiones ==============================*/
 
@@ -134,7 +137,7 @@ function campos_reflexiones() {
 	) );
 
 }
-
+/*
 
 function proyecto_post_link( $post_link, $id = 0 ) {
             $post = get_post($id);
@@ -158,5 +161,7 @@ function proyecto_post_link( $post_link, $id = 0 ) {
             return $post_link;
         }
         add_filter( 'post_type_link', 'proyecto_post_link', 1, 3 );
+
+*/
 
 ?>
